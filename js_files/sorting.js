@@ -27,12 +27,12 @@ function swap(ele1,ele2){
 function disableSortingBtn(){
     document.querySelector(".bubbleSort").disabled=true
     // document.querySelector(".bubbleSort").innerText="Sorting..."
-
     document.querySelector(".insertionSort").disabled=true
     document.querySelector(".mergeSort").disabled=true
     document.querySelector(".quickSort").disabled=true
     document.querySelector(".selectionSort").disabled=true
 }
+
 function enableSortingBtn(){
     document.querySelector(".bubbleSort").disabled=false
     // document.querySelector(".bubbleSort").innerText="Sorted"
@@ -57,6 +57,7 @@ function disableNewArrayBtn(){
     document.querySelector(".newArray").disabled=true
 }
 function enableNewArrayBtn(){
+
     document.querySelector(".newArray").disabled=false
 }
 
@@ -91,8 +92,9 @@ delayElement.addEventListener("input",function(){
 
 let array=[]
 
-function createNewArray(noofbars=30){
+function createNewArray(noofbars=10){
     deleteChild()
+    // resetcoloring()
     array=[]
     for(let i=0;i<noofbars;i++){
         array.push(Math.floor(Math.random()*250)+1);
@@ -128,9 +130,12 @@ function resetcoloring(){
 
     document.querySelector(".mergeSort").innerText="Merge Sort"
     document.querySelector(".mergeSort").classList.remove("sorted");
+    document.querySelector(".mergeSort").style.background = ''; 
+
 
     document.querySelector(".quickSort").innerText="Quick Sort"
     document.querySelector(".quickSort").classList.remove("sorted");
+    document.querySelector(".quickSort").style.background = ''; 
 
     document.querySelector(".selectionSort").innerText="Selection Sort"
     document.querySelector(".selectionSort").classList.remove("sorted");
